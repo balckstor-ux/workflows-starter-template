@@ -1,16 +1,252 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link
-			rel="icon"
-			href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 66 30'><path fill='%23000000' d='M52.688 13.028c-.22 0-.437.008-.654.015a.3.3 0 0 0-.102.024.37.37 0 0 0-.236.255l-.93 3.249c-.401 1.397-.252 2.687.422 3.634.618.876 1.646 1.39 2.894 1.45l5.045.306a.45.45 0 0 1 .435.41.5.5 0 0 1-.025.223.64.64 0 0 1-.547.426l-5.242.306c-2.848.132-5.912 2.456-6.987 5.29l-.378 1a.28.28 0 0 0 .248.382h18.054a.48.48 0 0 0 .464-.35c.32-1.153.482-2.344.48-3.54 0-7.22-5.79-13.072-12.933-13.072M44.807 29.578l.334-1.175c.402-1.397.253-2.687-.42-3.634-.62-.876-1.647-1.39-2.896-1.45l-23.665-.306a.47.47 0 0 1-.374-.199.5.5 0 0 1-.052-.434.64.64 0 0 1 .552-.426l23.886-.306c2.836-.131 5.9-2.456 6.975-5.29l1.362-3.6a.9.9 0 0 0 .04-.477C48.997 5.259 42.789 0 35.367 0c-6.842 0-12.647 4.462-14.73 10.665a6.92 6.92 0 0 0-4.911-1.374c-3.28.33-5.92 3.002-6.246 6.318a7.2 7.2 0 0 0 .18 2.472C4.3 18.241 0 22.679 0 28.133q0 .74.106 1.453a.46.46 0 0 0 .457.402h43.704a.57.57 0 0 0 .54-.418'/></svg>"
-		/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Workflows Starter Template</title>
-	</head>
-	<body>
-		<div id="root"></div>
-		<script type="module" src="/src/main.tsx"></script>
-	</body>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>أبو علي ستور | ريموتات وستلايت الكويت</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Cairo',sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+header{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+url('https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero{
+max-width:900px;
+}
+
+.hero h1{
+font-size:70px;
+font-weight:900;
+color:#ffcc00;
+text-shadow:0 0 20px #ff9900;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:24px;
+line-height:2;
+color:#eee;
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:18px 40px;
+background:#ff0000;
+color:white;
+font-size:22px;
+font-weight:bold;
+border-radius:50px;
+text-decoration:none;
+transition:.3s;
+box-shadow:0 0 20px red;
+}
+
+.btn:hover{
+transform:scale(1.1);
+background:#ffcc00;
+color:black;
+box-shadow:0 0 30px #ffcc00;
+}
+
+section{
+padding:100px 10%;
+}
+
+.title{
+text-align:center;
+font-size:50px;
+margin-bottom:60px;
+color:#ffcc00;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111;
+padding:40px;
+border-radius:25px;
+text-align:center;
+transition:.3s;
+border:2px solid #222;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#ff0000;
+box-shadow:0 0 25px rgba(255,0,0,.5);
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:20px;
+color:#ffcc00;
+}
+
+.card p{
+line-height:2;
+color:#ccc;
+}
+
+.contact{
+text-align:center;
+background:#0d0d0d;
+border-top:3px solid #ff0000;
+}
+
+.contact h2{
+font-size:55px;
+margin-bottom:20px;
+color:#ffcc00;
+}
+
+.phone{
+font-size:50px;
+font-weight:900;
+color:#00ff88;
+margin:30px 0;
+text-shadow:0 0 15px #00ff88;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:black;
+color:#888;
+font-size:18px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.title{
+font-size:35px;
+}
+
+.phone{
+font-size:35px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="hero">
+
+<h1>أبو علي ستور 🔥</h1>
+
+<p>
+بيع وتوصيل ريموتات التلفزيون وقطع غيار الستلايت
+في جميع مناطق الكويت بأفضل الأسعار وأسرع خدمة
+</p>
+
+<a class="btn" href="https://wa.me/96597717183">
+اطلب الآن
+</a>
+
+</div>
+
+</header>
+
+<section>
+
+<h2 class="title">خدماتنا</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>ريموتات تلفزيون</h3>
+<p>
+نوفر جميع أنواع ريموتات التلفزيون الأصلية والبديلة
+لكافة الماركات العالمية
+</p>
+</div>
+
+<div class="card">
+<h3>قطع غيار ستلايت</h3>
+<p>
+قطع أصلية عالية الجودة لجميع أجهزة الرسيفر والستلايت
+بأفضل الأسعار
+</p>
+</div>
+
+<div class="card">
+<h3>توصيل سريع</h3>
+<p>
+خدمة توصيل فورية لجميع مناطق الكويت
+حتى باب البيت
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2>تواصل معنا الآن</h2>
+
+<p>
+متوفرون يومياً لخدمتكم وطلباتكم
+</p>
+
+<div class="phone">
+97717183
+</div>
+
+<a class="btn" href="tel:97717183">
+اتصال مباشر
+</a>
+
+</section>
+
+<footer>
+
+© 2026 أبو علي ستور - جميع الحقوق محفوظة
+
+</footer>
+
+</body>
 </html>
